@@ -1,0 +1,19 @@
+#define ledPin 13 //используем макрос для номера пина
+#define ledOn digitalWrite(ledPin, HIGH) //макрос для включения LED пина
+#define ledOff digitalWrite(ledPin, LOW) //макрос для выключения LED пина
+
+void setup() {
+  pinMode(ledPin, OUTPUT);  //определяем LED пин с помощью двух параметров - номера пина ledPin и его поведения
+}
+void Blink (int frequency) {
+  ledOn;
+  delay(frequency); 
+  ledOff;
+  delay(frequency);
+} //отдельно определяем функция мигания LED пина, используя макросы, описанные в начале. Параметр функции - задержка мигания в мс
+
+void loop() {
+  Blink(1000);
+  Blink(500);
+  //вызов функции мигания с двумя разными параметрами
+}
